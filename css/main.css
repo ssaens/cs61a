@@ -1,0 +1,241 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: ghostwhite;
+    font-family: sans-serif;
+}
+
+div, nav {
+    position: relative;
+    display: block;
+}
+
+p, h1, h2, h3, h4, div {
+    margin: 0;
+    font-weight: 100;
+}
+
+p {
+    padding: 10px 0;
+}
+
+code {
+    font: 0.9em 'Andale Mono', Consolas, 'Courier New';
+    color: darkgreen;
+}
+
+.row {
+    padding: 40px 0;
+}
+
+.container {
+    padding: 0 10%;
+}
+
+.code {
+    background-color: #1a1e24;
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    max-width: 100px;
+    height: 60px;
+}
+
+table tr:nth-child(even) {
+    background-color: #ccc;
+}
+
+table tr {
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+table th {
+    color: white;
+    background-color: black;
+}
+
+/* === NAVIGATION === */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 1.5em;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover, .offcanvas a:focus {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0px;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+#main {
+    transition: margin-left .5s;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* === SHELL === */
+.shell {
+    margin: 0;
+    padding: 0 50px;
+    list-style: none;
+    font: 0.9em 'Andale Mono', Consolas, 'Courier New';
+    line-height: 1.6em;
+}
+
+    #greeting {
+        font-size: 1.4em;
+    }
+
+    #name {
+        color: #e47f16;
+    }
+
+.shell li.prompt:before {
+    content: '>>>';
+    color: #ffed00;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    cursor: text;
+}
+
+.shell li.indent:before {
+    content: '...';
+    color: #ffed00;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    cursor: text;
+}
+
+.shell li.prompt {
+    padding: 0 0 0 35px;
+}
+
+.shell li {
+    padding: 0;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.shell li.indent-1 {
+    padding: 0 0 0 70px;   
+}
+
+.shell li.indent-2 {
+    padding: 0 0 0 105px;
+}
+
+span.keyword {
+    color: #e47f16;
+}
+
+li.comment {
+    color: grey;
+}
+
+@keyframes cursor_blink {
+    0% {background-color: white;}
+    50% {background-color: #1a1e24;}
+    100% {background-color: white;}
+}
+
+@-webkit-keyframes cursor_blink {
+    0% {background-color: white;}
+    50% {background-color: #1a1e24;}
+    100% {background-color: white;}
+}
+
+#cursor {
+    height: 1.562em;
+    width: 10px;
+    background-color: white;
+    display: block;
+
+    animation-timing-function: steps(1, end);
+    -webkit-animation-name: cursor_blink; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1.5s; /* Chrome, Safari, Opera */
+    animation-name: cursor_blink;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+/* === FOOTER === */
+footer {
+    width: 100%;
+}
+
+    footer.row {
+        background-color: black;
+        text-align: center;
+    }
+
+    footer #footer_logo {
+        display: inline-block;
+        margin: 20px auto;
+    }
+
+    footer #footer_links {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+        footer ul {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        footer li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        footer a, footer a:visited {
+            color: grey;
+            transition: 0.5s;
+        }
+
+        footer a:hover {
+            color: white;
+            transition: 0.5s;
+        }
