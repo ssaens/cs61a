@@ -1,0 +1,247 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CS61A</title>
+    <link rel='stylesheet' type='text/css' href='css/main.css'>
+    <script src="https://use.fontawesome.com/d59afdec51.js"></script>
+    <script src='js/main.js'></script>
+</head>
+
+<body>
+    
+    <nav id='main_nav' class='sidenav'>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href='dillonyao.tk' class='logo'>
+            <img href=''>
+        </a>
+        <a href="#lst">List Operations</a>
+        <a href="#iter_gen_stream">Iterators, Generators, Streams</a>
+        <a href="#">SQL</a>
+        <a href="#">Recursive Data Structures</a>
+    </nav>
+    
+    <span id='navbtn' style="font-size:30px;cursor:pointer;color:black;" onclick="openNav()">&#9776;</span>   
+    
+    <div id='main'>
+    
+    <div name='lists' class='row'>
+        <div class='container'>
+            <h1>List Operations</h1>
+            <p>Python lists are ordered collections of objects. There are many common python operations that may be used to combine and modify lists. Some will mutate our data structures and others make new lists. It's important to understand what list functions are doing to your data structures to ensure that functions you write are doing exactly what you want them to do without unintended side effects.</p>
+            
+            <p>Here is a list of common operations:</p>
+            
+            <table>
+                <tr>
+                    <th>Operation</th>
+                    <th>Mutation</th>
+                    <th>Action</th>
+                    <th>Return Value</th>
+                </tr>
+                <tr>
+                    <td><code>lst.append(elem)</code></td>
+                    <td>Yes</td>
+                    <td>appends the element <code>elem</code> to <code>lst</code></td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td><code>lst.extend(iterable)</code></td>
+                    <td>Yes</td>
+                    <td>For each element in <code>iterable</code>, append the element to <code>lst</code></td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td><code>lst1 += lst2</code></td>
+                    <td>Yes</td>
+                    <td>Does the same thing as <code>extend</code>, but cannot be assigned to a variable</td>
+                    <td>N/A</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        
+    <div class='code row'>
+        <div class='container'>
+            <ul class='shell'>
+                <li class='comment'># append</li>
+                <li class='prompt'>lst = [1, 2, 3]</li>
+                <li class='prompt'>lst.append([4])</li>
+                <li class='prompt'>lst</li>
+                <li>[1, 2, 3, [4]]</li>
+                <li class='prompt'>lst.append(4)</li>
+                <li>[1, 2, 3, [4], 4]</li>
+            </ul>
+            <ul class='shell'>
+                <li class='comment'># extend</li>
+                <li class='prompt'>lst = [1, 2, 3]</li>
+                <li class='prompt'>lst.extend([4, 5])</li>
+                <li class='prompt'>lst</li>
+                <li>[1, 2, 3, 4, 5]</li>
+            </ul>
+            <ul class='shell'>
+                <li class='comment'># +=</li>
+                <li class='prompt'>lst1, lst2 = [1, 2, 3], [4, 5, 6]</li>
+                <li class='prompt'>lst1 += lst2</li>
+                <li class='prompt'>lst1</li>
+                <li>[1, 2, 3, 4, 5, 6]</li>
+            </ul>
+        </div>
+    </div>
+        
+    <div class='row'>
+        <div class='container'>
+            <table>
+                <tr>
+                    <th>Operation</th>
+                    <th>Mutation</th>
+                    <th>Action</th>
+                    <th>Return Value</th>
+                </tr>
+                <tr>
+                    <td><code>lst1 + lst2</code></td>
+                    <td>No</td>
+                    <td>Concatenates <code>lst1</code> and <code>lst2</code></td>
+                    <td>A new list containing the elements of <code>lst1</code> follwed by the elements of <code>lst2</code></td>
+                </tr>
+                <tr>
+                    <td><code>lst1[i:j:step]</code></td>
+                    <td>No</td>
+                    <td>Slices the list including elements <code>i</code> through <code>j</code> of lst, not including <code>j</code>, steeping by <code>step</code></td>
+                    <td>A new list containing elements <code>i</code> to <code>j</code>, not including <code>j</code> of <code>lst</code>, steping by <code>step</code></td>
+                </tr>
+                <tr>
+                    <td><code>lst.pop(i)</code></td>
+                    <td>Yes</td>
+                    <td>Pops off the element at index <code>i</code> from <code>lst</code>, removing it. Defaults to the last element of <code>lst</code> if no index is given</td>
+                    <td>The popped off element</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+                
+    <div class='code row'>
+        <div class='container'>
+            <ul class='shell'>
+                <li class='comment'># concatenation</li>
+                <li class='prompt'>lst1, lst2 = [1, 2, 3], [4, 5, 6]</li>
+                <li class='prompt'>lst1 + lst2</li>
+                <li>[1, 2, 3, 4, 5, 6]</li>
+                <li class='prompt'>lst1</li>
+                <li>[1, 2, 3]</li>
+            </ul>
+            <ul class='shell'>
+                <li class='comment'># slicing</li>
+                <li class='prompt'>lst = [1, 2, 3, 4, 5]</li>
+                <li class='prompt'>lst[:]</li>
+                <li>[1, 2, 3, 4, 5]</li>
+                <li class='prompt'>lst[1:4]</li>
+                <li>[2, 3, 4]</li>
+                <li class='prompt'>lst[:-1]</li>
+                <li>[1, 2, 3, 4]</li>
+            </ul>
+            <ul class='shell'>
+                <li class='comment'># popping</li>
+                <li class='prompt'>lst = [1, 2, 3, 4]</li>
+                <li class='prompt'>lst.pop()</li>
+                <li>4</li>
+                <li class='prompt'>lst.pop(1)</li>
+                <li>2</li>
+                <li class='prompt'>lst</li>
+                <li>[1, 3]</li>
+            </ul>
+        </div>
+    </div>
+        
+    <div name='iter_gen_stream' class='row'>
+        <div class='container'>
+            <h1>Iterators, Generators, and Streams</h1>
+            <h2>Iterators</h2>
+            <p>Iterators are objects which return the elements of some sequence in some order. They must implement the <code>__next__</code> function. When called, <code>__next__</code> returns the next element of the underlying sequence it represents. Calling <code>__next__</code> mutates the iterator, advancing the position of the iterator. An iterator will raise <code>StopIteration</code> exception upon reaching the end of its sequence.</p>
+        </div>        
+    </div>
+        
+    <div class='code row'>
+        <div class='container'>
+            <ul class='shell'>
+                <li class='prompt'><span class='keyword'>class</span> MyIterator:</li>
+                <li class='indent indent-1'><span class='keyword'>def</span>__init__(self, lst):</li>
+                <li class='indent indent-2'><span class='keyword'>self</span>.lst = lst</li>
+                <li class='indent indent-2'><span class='keyword'>self</span>.next = 0</li>
+                <li class='indent indent-1'><span class='keyword'>def</span> __next__(self):</li>
+                <li class='indent indent-2'><span class='keyword'>self</span>.next = lst.pop()</li>
+                <li class='indent indent-2'><span class='keyword'>return self</span>.next</li>
+                <li class='indent'>.</li>
+                <li class='prompt'>iterator = MyIterator([1, 2, 3, 4, 5])</li>
+            </ul>
+        </div>
+    </div>
+        
+    <div class='row'>
+        <div class='container'>
+            <h2>Iterables</h2>
+            <p>Iterables represent collections of data which may be traversed in some order. Iterables contain a <code>__iter__</code> method, which, once called, returns an iterator. Every call to <code>__iter__</code> returns a new iterator object. If a class has both the <code>__iter__</code> and <code>__next__</code> methods, it is both and iterable, and iterator.</p>
+        </div>    
+    </div>
+        
+     <div class='code row'>
+        <div class='container'>
+            <ul class='shell'>
+            </ul>
+        </div>
+    </div>
+        
+    <div class='row'>
+        <div class='container'>
+            <h2>Generators</h2>
+            <p>Generators are an alternate method to iterate through a sequence. Generators are created through generator functions which use a <code>yield</code> statement rather than a <code>return</code>. When a generator function is called, it returns a generator object. Calling next on a generator will execute the body of the generator function that created with until a <code>yield</code> statement is reached. The <code>yielded</code> value is then the return value of the next call. Upon calling next again, the generator function body continues execution where it left off until it reaches another <code>yield</code> or returns a value (remember that if a function doesn't explictly have a return value, it returns <code>None</code>), raising a <code>StopIteration</code> exception.</p>
+        </div>    
+    </div>
+        
+     <div class='code row'>
+        <div class='container'>
+            <ul class='shell'>
+                <li class='prompt'><span class='keyword'>def</span> generator_maker(i):</li>
+                <li class='indent indent-1'><span class='keyword'>while</span> i:</li>
+                <li class='indent indent-2'><span class='keyword'>yield</span> i</li>
+                <li class='indent indent-2'>i -= 1</li>
+                <li class='prompt'>g = generator_maker(3)</li>
+                <li class='prompt'>g</li>
+                <li>generator object</li>
+                <li class='prompt'>next(g)</li>
+                <li>3</li>
+                <li class='prompt'>list(g)</li>
+                <li>[2, 1]</li>
+                <li class='prompt'>next(g)</li>
+                <li>StopIteration</li>
+            </ul>
+        </div>
+    </div>
+        
+    <div class='row'>
+        <div class='container'>
+            <h2>Streams</h2>
+            <p>L</p>
+        </div>    
+    </div>
+        
+    <div class='code row'>
+        <div class='container'>
+            <ul class='shell'>
+            </ul>
+        </div>
+    </div>
+        
+    <footer class='row'>
+        <div class='container'>
+            This is the end
+        </div>
+    </footer>
+     
+    </div>
+        
+</body>    
+    
+</html>
