@@ -5,242 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>CS61A</title>
+    <pageid id=0></pageid>
     <link rel='stylesheet' type='text/css' href='css/main.css'>
     <script src="https://use.fontawesome.com/d59afdec51.js"></script>
-    <script src='js/main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
 <body>
+    <nav id='main_nav' class='sidenav'></nav>
     
-    <nav id='main_nav' class='sidenav'>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href='dillonyao.tk' class='logo'>
-            <img href=''>
-        </a>
-        <a href="#lst">List Operations</a>
-        <a href="#iter_gen_stream">Iterators, Generators, Streams</a>
-        <a href="#">SQL</a>
-        <a href="#">Recursive Data Structures</a>
-    </nav>
+    <div id='content'>
+        <header></header>
+        
+        <div class='code section' style='background: white; color: black;'>
+                <div class='wrap'>
+                    <h2>Welcome</h2>
+                    <p>Lorem Ipsum Text</p>
+                </div>    
+        </div>
+        <div class='color_strip cs3'></div>
+        
+        <div id='table-of-contents' class='section'>
+            <div class='wrap'>
+                <h1>Table of Contents</h1>
+                <div class='color_strip cs1'></div>
+                <ul class='toc container'>
+                    <li>
+                        <h3><a href='pages/1-python.html'>1. Python</a></h3>
+                        <ul>
+                            <li><a href='pages/1-python.html#twos-complement'>1.1 Two's Complement</a></li>
+                            <li><a href='pages/1-python.html#floating-point'>1.2 Floating Point</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/2-environments'>2. Environments</a></h3>
+                        <ul>
+                            <li><a href='pages/2-environments#introduction'>2.1 Introduction</a></li>
+                            <li><a href='pages/2-environments#pointers'>2.2 Pointers</a></li>
+                            <li><a href='pages/2-environments#arrays-and-strings'>2.3 Arrays and Srings</a></li>
+                            <li><a href='pages/2-environments#memory-management'>2.4 Memory Management</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/3-assembly'>3. Assembly</a></h3>
+                        <ul>
+                            <li><a href='pages/3-assembly#mips'>3.1 MIPS</a></li>
+                            <li><a href='pages/3-assembly#functions'>3.2 Functions</a></li>
+                            <li><a href='pages/3-assembly#instruction-formats'>3.3 Instruction Formats</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/4-call'>4. CALL</a></h3>
+                        <ul>
+                            <li><a href='pages/4-call#compiler'>4.1 Compiler</a></li>
+                            <li><a href='pages/4-call#assembler'>4.2 Assembler</a></li>
+                            <li><a href='pages/4-call#linker'>4.3 Linker</a></li>
+                            <li><a href='pages/4-call#loader'>4.4 Loader</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/5-sds'>5. SDS</a></h3>
+                        <ul>
+                            <li><a href='pages/5-sds#logic'>5.1 Logic</a></li>
+                            <li><a href='pages/5-sds#function-units'>5.2 Functional Units</a></li>
+                            <li><a href='pages/5-sds#finite-state-machines'>5.3 Finite State Machines</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/6-cpu'>6. The CPU</a></h3>
+                        <ul>
+                            <li><a href='pages/6-cpu#datapath'>6.1 The Datapath</a></li>
+                            <li><a href='pages/6-cpu#control'>6.2 Control</a></li>
+                            <li><a href='pages/6-cpu#pipelining'>6.3 Pipelining</a></li>
+                            <li><a href='pages/6-cpu#hazards'>6.4 Hazards</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/7-memory-and-caching'>7. Memory and Caching</a></h3>
+                        <ul>
+                            <li><a href='pages/7-memory-and-caching#memory-hierarchy'>7.1 Memory Hierarchy</a></li>
+                            <li><a href='pages/7-memory-and-caching#caches'>7.2 Caches</a></li>
+                            <li><a href='pages/7-memory-and-caching#multilevel-caching'>7.3 Multilevel Caches</a></li>
+                            <li><a href='pages/7-memory-and-caching#virtual-memory'>7.4 Virtual Memory</a></li>
+                            <li><a href='pages/7-memory-and-caching#tlb'>7.5 The TLB</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/8-parallelism'>8. Parallelism</a></h3>
+                        <ul>
+                            <li><a href='pages/8-parallelism#performance'>8.1 Performance</a></li>
+                            <li><a href='pages/8-parallelism#flynn-taxonomy'>8.2 Flynn Taxonomy</a></li>
+                            <li><a href='pages/8-parallelism#data-level-parallelism'>8.3 Data Level Parallelism</a></li>
+                            <li><a href='pages/8-parallelism#thread-level-parallelism'>8.4 Thread Level Parallelism</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/9-wsc'>9. Warehouse Scale Computing</a></h3>
+                        <ul>
+                            <li><a href='pages/9-wsc#structure'>9.1 Structure</a></li>
+                            <li><a href='pages/9-wsc#mapredcue'>9.2 MapReduce</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/10-io'>10. Input/Output</a></h3>
+                        <ul>
+                            <li><a href='pages/10-io#polling'>10.1 Polling</a></li>
+                            <li><a href='pages/10-io#interupts'>10.2 Interupts</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/11-dependability'>11. Dependability</a></h3>
+                        <ul>
+                            <li><a href='pages/11-dependability#ecc'>11.1 Error Correcting Codes</a></li>
+                            <li><a href='pages/11-dependability#raid'>11.2 RAID</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a href='pages/12-practice'>12. Practice</a></h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
     
-    <span id='navbtn' style="font-size:30px;cursor:pointer;color:black;" onclick="openNav()">&#9776;</span>   
-    
-    <div id='main'>
-    
-    <div name='lists' class='row'>
-        <div class='container'>
-            <h1>List Operations</h1>
-            <p>Python lists are ordered collections of objects. There are many common python operations that may be used to combine and modify lists. Some will mutate our data structures and others make new lists. It's important to understand what list functions are doing to your data structures to ensure that functions you write are doing exactly what you want them to do without unintended side effects.</p>
-            
-            <p>Here is a list of common operations:</p>
-            
-            <table>
-                <tr>
-                    <th>Operation</th>
-                    <th>Mutation</th>
-                    <th>Action</th>
-                    <th>Return Value</th>
-                </tr>
-                <tr>
-                    <td><code>lst.append(elem)</code></td>
-                    <td>Yes</td>
-                    <td>appends the element <code>elem</code> to <code>lst</code></td>
-                    <td>None</td>
-                </tr>
-                <tr>
-                    <td><code>lst.extend(iterable)</code></td>
-                    <td>Yes</td>
-                    <td>For each element in <code>iterable</code>, append the element to <code>lst</code></td>
-                    <td>None</td>
-                </tr>
-                <tr>
-                    <td><code>lst1 += lst2</code></td>
-                    <td>Yes</td>
-                    <td>Does the same thing as <code>extend</code>, but cannot be assigned to a variable</td>
-                    <td>N/A</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+        <footer>
         
-    <div class='code row'>
-        <div class='container'>
-            <ul class='shell'>
-                <li class='comment'># append</li>
-                <li class='prompt'>lst = [1, 2, 3]</li>
-                <li class='prompt'>lst.append([4])</li>
-                <li class='prompt'>lst</li>
-                <li>[1, 2, 3, [4]]</li>
-                <li class='prompt'>lst.append(4)</li>
-                <li>[1, 2, 3, [4], 4]</li>
-            </ul>
-            <ul class='shell'>
-                <li class='comment'># extend</li>
-                <li class='prompt'>lst = [1, 2, 3]</li>
-                <li class='prompt'>lst.extend([4, 5])</li>
-                <li class='prompt'>lst</li>
-                <li>[1, 2, 3, 4, 5]</li>
-            </ul>
-            <ul class='shell'>
-                <li class='comment'># +=</li>
-                <li class='prompt'>lst1, lst2 = [1, 2, 3], [4, 5, 6]</li>
-                <li class='prompt'>lst1 += lst2</li>
-                <li class='prompt'>lst1</li>
-                <li>[1, 2, 3, 4, 5, 6]</li>
-            </ul>
-        </div>
-    </div>
+        </footer>
         
-    <div class='row'>
-        <div class='container'>
-            <table>
-                <tr>
-                    <th>Operation</th>
-                    <th>Mutation</th>
-                    <th>Action</th>
-                    <th>Return Value</th>
-                </tr>
-                <tr>
-                    <td><code>lst1 + lst2</code></td>
-                    <td>No</td>
-                    <td>Concatenates <code>lst1</code> and <code>lst2</code></td>
-                    <td>A new list containing the elements of <code>lst1</code> follwed by the elements of <code>lst2</code></td>
-                </tr>
-                <tr>
-                    <td><code>lst1[i:j:step]</code></td>
-                    <td>No</td>
-                    <td>Slices the list including elements <code>i</code> through <code>j</code> of lst, not including <code>j</code>, steeping by <code>step</code></td>
-                    <td>A new list containing elements <code>i</code> to <code>j</code>, not including <code>j</code> of <code>lst</code>, steping by <code>step</code></td>
-                </tr>
-                <tr>
-                    <td><code>lst.pop(i)</code></td>
-                    <td>Yes</td>
-                    <td>Pops off the element at index <code>i</code> from <code>lst</code>, removing it. Defaults to the last element of <code>lst</code> if no index is given</td>
-                    <td>The popped off element</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-                
-    <div class='code row'>
-        <div class='container'>
-            <ul class='shell'>
-                <li class='comment'># concatenation</li>
-                <li class='prompt'>lst1, lst2 = [1, 2, 3], [4, 5, 6]</li>
-                <li class='prompt'>lst1 + lst2</li>
-                <li>[1, 2, 3, 4, 5, 6]</li>
-                <li class='prompt'>lst1</li>
-                <li>[1, 2, 3]</li>
-            </ul>
-            <ul class='shell'>
-                <li class='comment'># slicing</li>
-                <li class='prompt'>lst = [1, 2, 3, 4, 5]</li>
-                <li class='prompt'>lst[:]</li>
-                <li>[1, 2, 3, 4, 5]</li>
-                <li class='prompt'>lst[1:4]</li>
-                <li>[2, 3, 4]</li>
-                <li class='prompt'>lst[:-1]</li>
-                <li>[1, 2, 3, 4]</li>
-            </ul>
-            <ul class='shell'>
-                <li class='comment'># popping</li>
-                <li class='prompt'>lst = [1, 2, 3, 4]</li>
-                <li class='prompt'>lst.pop()</li>
-                <li>4</li>
-                <li class='prompt'>lst.pop(1)</li>
-                <li>2</li>
-                <li class='prompt'>lst</li>
-                <li>[1, 3]</li>
-            </ul>
-        </div>
-    </div>
-        
-    <div name='iter_gen_stream' class='row'>
-        <div class='container'>
-            <h1>Iterators, Generators, and Streams</h1>
-            <h2>Iterators</h2>
-            <p>Iterators are objects which return the elements of some sequence in some order. They must implement the <code>__next__</code> function. When called, <code>__next__</code> returns the next element of the underlying sequence it represents. Calling <code>__next__</code> mutates the iterator, advancing the position of the iterator. An iterator will raise <code>StopIteration</code> exception upon reaching the end of its sequence.</p>
-        </div>        
-    </div>
-        
-    <div class='code row'>
-        <div class='container'>
-            <ul class='shell'>
-                <li class='prompt'><span class='keyword'>class</span> MyIterator:</li>
-                <li class='indent indent-1'><span class='keyword'>def</span>__init__(self, lst):</li>
-                <li class='indent indent-2'><span class='keyword'>self</span>.lst = lst</li>
-                <li class='indent indent-2'><span class='keyword'>self</span>.next = 0</li>
-                <li class='indent indent-1'><span class='keyword'>def</span> __next__(self):</li>
-                <li class='indent indent-2'><span class='keyword'>self</span>.next = lst.pop()</li>
-                <li class='indent indent-2'><span class='keyword'>return self</span>.next</li>
-                <li class='indent'>.</li>
-                <li class='prompt'>iterator = MyIterator([1, 2, 3, 4, 5])</li>
-            </ul>
-        </div>
-    </div>
-        
-    <div class='row'>
-        <div class='container'>
-            <h2>Iterables</h2>
-            <p>Iterables represent collections of data which may be traversed in some order. Iterables contain a <code>__iter__</code> method, which, once called, returns an iterator. Every call to <code>__iter__</code> returns a new iterator object. If a class has both the <code>__iter__</code> and <code>__next__</code> methods, it is both and iterable, and iterator.</p>
-        </div>    
-    </div>
-        
-     <div class='code row'>
-        <div class='container'>
-            <ul class='shell'>
-            </ul>
-        </div>
-    </div>
-        
-    <div class='row'>
-        <div class='container'>
-            <h2>Generators</h2>
-            <p>Generators are an alternate method to iterate through a sequence. Generators are created through generator functions which use a <code>yield</code> statement rather than a <code>return</code>. When a generator function is called, it returns a generator object. Calling next on a generator will execute the body of the generator function that created with until a <code>yield</code> statement is reached. The <code>yielded</code> value is then the return value of the next call. Upon calling next again, the generator function body continues execution where it left off until it reaches another <code>yield</code> or returns a value (remember that if a function doesn't explictly have a return value, it returns <code>None</code>), raising a <code>StopIteration</code> exception.</p>
-        </div>    
-    </div>
-        
-     <div class='code row'>
-        <div class='container'>
-            <ul class='shell'>
-                <li class='prompt'><span class='keyword'>def</span> generator_maker(i):</li>
-                <li class='indent indent-1'><span class='keyword'>while</span> i:</li>
-                <li class='indent indent-2'><span class='keyword'>yield</span> i</li>
-                <li class='indent indent-2'>i -= 1</li>
-                <li class='prompt'>g = generator_maker(3)</li>
-                <li class='prompt'>g</li>
-                <li>generator object</li>
-                <li class='prompt'>next(g)</li>
-                <li>3</li>
-                <li class='prompt'>list(g)</li>
-                <li>[2, 1]</li>
-                <li class='prompt'>next(g)</li>
-                <li>StopIteration</li>
-            </ul>
-        </div>
-    </div>
-        
-    <div class='row'>
-        <div class='container'>
-            <h2>Streams</h2>
-            <p>L</p>
-        </div>    
-    </div>
-        
-    <div class='code row'>
-        <div class='container'>
-            <ul class='shell'>
-            </ul>
-        </div>
-    </div>
-        
-    <footer class='row'>
-        <div class='container'>
-            This is the end
-        </div>
-    </footer>
      
     </div>
+    
+    <script src='js/main.js'></script>
+    <script type='text/jscript'>
+        $(document).ready(function(){
+            initializePage();
+        });
+    </script>
         
 </body>    
     
