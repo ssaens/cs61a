@@ -223,6 +223,10 @@ header h1 {
     border-left: 2px solid white;
 }
 
+#table-of-contents ul.toc li li:first-child a {
+    padding: 4px 0 0 26px;
+}
+
 #table-of-contents ul.toc li li:last-child a {
     padding: 4px 0 0 26px;
 }
