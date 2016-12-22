@@ -15,45 +15,51 @@ var tableOfContents = {
 }
 
 function makeTag(type, attr, text) {
-    attrs = []
-    for (key in attr) {
-        attrs.add(key + "='" + attr[key] + "'");
+    attrs = [];
+    for (var key in attr) {
+        attrs.push(key + "='" + attr[key] + "'");
     }
-    return '<' + type + ' ' + attr.join(' ') + '>' + text + '</' + tag + '>';
+    return '<' + type + ' ' + attrs.join(' ') + '>' + text + '</' + type + '>';
 }
 
 function generateNav(contents, page) {
-    var home = "<h3><a href='../index.html'>Home</a></h3>"
-    if (page == 0) {home = "<h3 class='active'><a href='index.html'>Home</a></h3>"}
-    var navHtml = "<div style='padding:15px'>" + home;
+    var homeLink = makeTag("a", {"href":"../index.html"}, "Home");
+    var homeTag = makeTag("h3", {}, homeLink);
+    if (page == 0) {
+        homeLink = makeTag("a", {"href":"index.html"}, "Home");
+        homeTag = makeTag("h3", {"class":"active"}, homeLink);
+    }
+    var navHtml = homeTag;
     var i = 1;
     for (section in contents) {
         navHtml += generateNavSection(i, section, contents[section], i==page);
         i += 1;
     }
-    return navHtml + "</div>";
+    return makeTag("div", {"style":"padding:15px"}, navHtml);
 }
 
 function generateNavSection(sectionNum, sectionName, subSections, active) {
     var sectionTitle = sectionNum + ". " + sectionName;
     var sectionURI = "pages/" + sectionNum + "-" + sectionName.toLowerCase().split(' ').join("-") + ".html";
-    var headTag = "<h3>"
-    if (active) { headTag = "<h3 class='active'>"}
-    var sectionHeader = headTag + "<a href='" + sectionURI + "'>" + sectionTitle + "</a></h3>";
-    var subSectionHtml = "<div class='nav-subsection'>";
+    var headerLink = makeTag("a", {"href":sectionURI}, sectionTitle);
+    var sectionHeader = makeTag("h3", {}, headerLink);
+    if (active) {
+        sectionHeader = makeTag("h3", {"class":"active"}, headerLink);
+    }
+    var subSectionHtml = "";
     j = 0;
     for (var j = 0; j < subSections.length; j++) {
         subSectionHtml += generateNavSubsection(sectionNum, sectionURI, j+1, subSections[j]);
     }
-    subSectionHtml += '</div>';
-    return "<div class='nav-section'>" + sectionHeader + subSectionHtml + '</div>';
+    subSectionHtml = makeTag("div", {"class":"nav-subsection"}, subSectionHtml);
+    return makeTag("div", {"class":"nav-section"}, sectionHeader + subSectionHtml);
 }
 
 function generateNavSubsection(sectionNum, sectionURI, subSectionInd, subSection) {
     var subSectionTag = '#' + subSection.toLowerCase().split(' ').join('-');
     var subSectionURI = sectionURI + subSectionTag
     var subSectionTitle = sectionNum + "." + subSectionInd + " " + subSection;
-    return "<li><a href='" + subSectionURI + "'>" + subSectionTitle + "</a></li>";
+    return makeTag("li", {}, makeTag("a", {"href":subSectionURI}, subSectionTitle));
 }
 
 function generateHeader(home) {
