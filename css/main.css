@@ -58,6 +58,7 @@ code {
 }
 
 .color_strip {
+    z-index: 1;
     background: #0066ff; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(20deg, #0099ff, #33cc33); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(20deg, #0099ff, #33cc33); /* For Opera 11.1 to 12.0 */
