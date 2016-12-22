@@ -1,17 +1,16 @@
 var tableOfContents = {
     "Python" : ["Basic Syntax", "Functions", "Evaluating Expressions", "Control", "Higher Order Functions"],
     "Environments" : ["Environment Diagrams", "Visualizing the Code"],
+    "Abstraction" : ["Function Abstraction", "Abstract Data Types"],
     "Recursion" : ["Recursive Calls", "Tail Recursion"],
-    "Abstraction" : [],
-    "Containers" : [],
-    "Recursive Data Structures" : [],
-    "Objects" : [],
-    "Sequences" : [],
-    "Iterators, Generators, and Streams" : [],
-    "Scheme" : [],
-    "Interpreters" : [],
-    "SQL" : [],
-    "Distributed Computation" : [],
+    "Containers" : ["Lists", "Dictionaries", "Sets"],
+    "Recursive Data Structures" : ["Trees", "Linked Lists"],
+    "Objects" : ["Classes", "Inheritance", "Representation"],
+    "Scheme" : ["Basic Syntax", "Special Forms", "Lists"],
+    "Sequences" : ["Iterators", "Generators", "Streams"],
+    "Interpreters" : ["Evaluation", "Application"],
+    "SQL" : ["Tables", "Joining Tables", "Recursive Select"],
+    "Distributed Computation" : ["Spark"],
     "More Practice" : [],
 }
 
@@ -66,7 +65,8 @@ function generateHeader(home) {
                     <i class='fa fa-bars' aria-hidden='true'></i> \
                 </a></span> \
                 <h1 style='display: inline-block'><a href='http://dillonyao.tk/cs61a'>CS<span style='border-bottom: 2px solid #0099ff'>61a</span> Study Guide</a></h1> \
-            </div><a href='http://dillonyao.tk'><img id='logo' src=" + imgURI + "></a><div class='color_strip cs3'></div>";
+            </div><a href='http://dillonyao.tk'><img id='logo' src=" + imgURI + "></a> \
+            <div class='color_strip cs3'></div>";
     return headerHtml;
 }
 
