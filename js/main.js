@@ -32,15 +32,16 @@ function generateNav(contents, page) {
     var navHtml = homeTag;
     var i = 1;
     for (section in contents) {
-        navHtml += generateNavSection(i, section, contents[section], i==page);
+        navHtml += generateNavSection(i, section, contents[section], page==0, i==page);
         i += 1;
     }
     return makeTag("div", {"style":"padding:15px"}, navHtml);
 }
 
-function generateNavSection(sectionNum, sectionName, subSections, active) {
+function generateNavSection(sectionNum, sectionName, subSections, onHome, active) {
     var sectionTitle = sectionNum + ". " + sectionName;
-    var sectionURI = "pages/" + sectionNum + "-" + sectionName.toLowerCase().replace("'", "").split(' ').join("-") + ".html";
+    var sectionURI = sectionNum + "-" + sectionName.toLowerCase().replace("'", "").split(' ').join("-") + ".html";
+    if (onHome) {sectionURI = "pages/" + sectionURI}
     var headerLink = makeTag("a", {"href":sectionURI}, sectionTitle);
     var sectionHeader = makeTag("h3", {}, headerLink);
     if (active) {
