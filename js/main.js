@@ -40,7 +40,7 @@ function generateNav(contents, page) {
 
 function generateNavSection(sectionNum, sectionName, subSections, active) {
     var sectionTitle = sectionNum + ". " + sectionName;
-    var sectionURI = "pages/" + sectionNum + "-" + sectionName.toLowerCase().split(' ').join("-") + ".html";
+    var sectionURI = "pages/" + sectionNum + "-" + sectionName.toLowerCase().replace("'", "").split(' ').join("-") + ".html";
     var headerLink = makeTag("a", {"href":sectionURI}, sectionTitle);
     var sectionHeader = makeTag("h3", {}, headerLink);
     if (active) {
@@ -56,7 +56,7 @@ function generateNavSection(sectionNum, sectionName, subSections, active) {
 }
 
 function generateNavSubsection(sectionNum, sectionURI, subSectionInd, subSection) {
-    var subSectionTag = '#' + subSection.toLowerCase().split(' ').join('-');
+    var subSectionTag = '#' + subSection.toLowerCase().replace("'", "").split(' ').join('-');
     var subSectionURI = sectionURI + subSectionTag
     var subSectionTitle = sectionNum + "." + subSectionInd + " " + subSection;
     return makeTag("li", {}, makeTag("a", {"href":subSectionURI}, subSectionTitle));

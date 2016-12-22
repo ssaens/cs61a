@@ -27,9 +27,9 @@ p {
     margin: 1em 0;
 }
 
-h1 { font-size: 1.7em; 
+h1 { font-size: 1.7em;
      margin-bottom: 5px; }
-h2 { font-size: 1.3em; 
+h2 { font-size: 1.3em;
      margin-bottom: 5px; }
 h3 { font-size: 0.9em;
      margin-bottom: 5px; }
@@ -41,7 +41,7 @@ code {
 
 /*==GENERAL CLASSES==*/
 .container {
-    
+
 }
 
 .wrap {
@@ -52,9 +52,26 @@ code {
     padding: 60px 0;
 }
 
+.section:last-child, .section:first-child {
+    border-bottom: none;
+}
+
+.intro {
+    padding-bottom: 0;
+}
+
 .code {
     background-color: #1a1e24;
     color: white;
+}
+
+code.inline {
+    background-color: beige;
+    color: black;
+}
+
+span.emp {
+    color: green;
 }
 
 .color_strip {
@@ -94,7 +111,7 @@ nav.sidenav {
     }
 
     .sidenav h3 a:hover {
-        color: #ffcc00;    
+        color: #ffcc00;
     }
 
     .sidenav li a {
