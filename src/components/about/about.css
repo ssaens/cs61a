@@ -1,0 +1,30 @@
+.about {
+    padding: 30px 10%;
+    color: black;
+    background-color: white;
+}
+
+.about li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.about .label {
+    color: #0099ff;
+    font-weight: 400;
+}
+
+.about-me {
+    overflow: auto;
+}
+
+.about-me img {
+    float: left;
+    margin-right: 25px;
+    border-radius: 50%;
+    height: 150px;
+}
+
+.bio {
+    margin-top: 10px;
+}
