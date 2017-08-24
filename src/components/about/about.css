@@ -18,13 +18,18 @@
     overflow: auto;
 }
 
-.about-me img {
+.profile-pic {
     float: left;
     margin-right: 25px;
     border-radius: 50%;
     height: 150px;
 }
 
-.bio {
-    margin-top: 10px;
+.discussion-info ul {
+    padding-left: 0;
+    display: inline-block;
+}
+
+.discussion-info li {
+    margin-left: 0;
 }

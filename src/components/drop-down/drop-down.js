@@ -20,7 +20,9 @@ class DropDown extends Component {
                     </div>
                 </div>
                 <div className="drop-down__content" ref={($) => this.contentElement = $}>
-                    <a className="slides-link" href={this.props.slides} target="_blank">Slides</a>
+                    <div className="ctas">
+                        {this._generateCtas()}
+                    </div>
                     <div className="drop-down__custom">
                         {this.props.custom}
                     </div>
@@ -29,9 +31,30 @@ class DropDown extends Component {
         );
     }
 
+    componentDidMount() {
+        let contentHeight = 0;
+        for (const child of this.contentElement.childNodes) {
+            contentHeight += child.offsetHeight || 0;
+        }
+        this.contentHeight = `${contentHeight}px`
+    }
+
     _toggle() {
         this.toggleButton.classList.toggle('active');
-        this.contentElement.classList.toggle('open');
+        if (!this.open) {
+            this.contentElement.style.height = this.contentHeight;
+        } else {
+            this.contentElement.style.height = 0;
+        }
+        this.open = !this.open;
+    }
+
+    _generateCtas() {
+        const ctas = [];
+        for (const cta of this.props.ctas) {
+            ctas.push(<a key={ctas.length} className="cta" href={cta.href} target="_blank">{cta.label}</a>);
+        }
+        return ctas;
     }
 
 }
