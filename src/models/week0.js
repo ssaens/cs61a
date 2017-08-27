@@ -1,4 +1,5 @@
 import React from 'react';
+import {ViewBox} from '../components/common/common';
 
 const LINKS = {
     survey: 'https://docs.google.com/forms/d/e/1FAIpQLSfNld97JPsiP8NZA-W52nE6RiGd9XwUvC3pqutoXKqA8UJmiw/viewform?usp=sf_link',
@@ -29,8 +30,16 @@ export default {
                         label: 'Worksheet 0: Lost on the Moon',
                         href: LINKS.worksheet
                     },
-                ]
+                ],
+                content: (
+                    <div className="container">
+                        <ViewBox>
+                            This activity introduces the culture of collaboration and teamwork we hope to foster in this course,
+                            along with some tips and ideas on how to succeed in 61a.
+                        </ViewBox>
+                    </div>
+                )
             }
-        ]
+        ],
     }
 }

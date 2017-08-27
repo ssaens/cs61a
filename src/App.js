@@ -162,7 +162,7 @@ class App extends Component {
                     <ViewBox>
                         <div className="about-me">
                             <h3 className="dotted dotted-about">About Me</h3>
-                            <img className="prof-pic" alt="me" src={me}/>
+                            <div className="prof-pic" style={{backgroundImage: `url(${me})`}}/>
                             <p>
                                 Hi there! My name is Dillon Yao and I'm the TA for this discussion and lab. I'm a
                                 third year EECS major here at Berkeley and front end intern at Playstation, working on the PS4.
