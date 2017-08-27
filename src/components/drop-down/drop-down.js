@@ -29,7 +29,7 @@ class DropDown extends Component {
             <div className="drop-down">
                 <ViewBox>
                     <div className="drop-down__header">
-                        <h3><span className="identifier">{type} {number}:</span> {title}</h3>
+                        <h3 className={`dotted dotted-${type.toLowerCase()}`}><span className="identifier">{type} {number}:</span> {title}</h3>
                         <span
                             className="drop-down__toggle"
                             style={chevronStyle}

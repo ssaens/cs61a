@@ -34,8 +34,8 @@ function viewFromTemplate(model) {
     if (Array.isArray(announcements) && announcements.length) {
         header = (
             <ViewBox>
-                <h2 className="dotted">{title}</h2>
-                <h3>Announcements</h3>
+                <h2 className="dotted dotted-title">{title}</h2>
+                <h3 className="dotted dotted-ann">Announcements</h3>
                 <div className="announcements">
                     {announcements}
                 </div>
@@ -44,7 +44,7 @@ function viewFromTemplate(model) {
     } else {
         header = (
             <ViewBox>
-                <h2>{title}</h2>
+                <h2 className="dotted dotted-title">{title}</h2>
             </ViewBox>
         );
     }

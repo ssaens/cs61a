@@ -1,13 +1,9 @@
 .drop-down {
-  margin-bottom: 1.4em;
+  margin-bottom: 1em;
 }
 
 .drop-down__header h3 {
   display: inline;
-}
-
-.drop-down__header {
-  padding-bottom: 5px;
 }
 
 .drop-down__header .identifier {
@@ -25,12 +21,9 @@
   display: inline-block;
   transition: 0.5s ease;
   margin-left: 10px;
+  font-size: 1.1em;
 }
 
 .drop-down__toggle:hover {
   cursor: pointer;
-}
-
-.drop-down__header {
-  border-bottom: 1px solid black;
 }

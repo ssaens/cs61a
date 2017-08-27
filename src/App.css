@@ -26,16 +26,8 @@ li {
 }
 
 ann {
-  margin-left: 4em;
+  margin-left: 2em;
   display: block;
-}
-
-ann:before {
-  content: '>>>';
-  font-size: 0.9em;
-  position: absolute;
-  top: -1px;
-  left: -2.4em;
 }
 
 .emp {
@@ -117,13 +109,47 @@ a:hover {
 }
 
 .dotted:before {
-  content: "\f138";
   font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
   color: #000;
+  margin-right: 10px;
+}
+
+ann:before {
+  content: "\f0da";
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #000;
+  margin-right: 8px;
+}
+
+.dotted-title:before {
+  content: "\f138";
   position: absolute;
   top: 1px;
   left: -1.3em;
+}
+
+.dotted-ann:before {
+  content: "\f0a1";
+}
+
+.dotted-discussion:before {
+  content: "\f0e6";
+}
+
+.dotted-lab:before {
+  content: "\f0c3";
+}
+
+.dotted-question:before {
+  content: "\f059";
+}
+
+.dotted-about:before {
+  content: "\f05a";
 }

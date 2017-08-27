@@ -122,7 +122,7 @@ class App extends Component {
         if (currentView.announcements && currentView.announcements.length) {
             announcements = (
                 <ViewBox>
-                    <h3>Recent Announcements</h3>
+                    <h3 className="dotted dotted-ann">Recent Announcements</h3>
                     <div className="announcements">
                         {currentView.announcements}
                     </div>
@@ -131,7 +131,7 @@ class App extends Component {
         } else {
             announcements = (
                 <ViewBox>
-                    <h3>Recent Announcements</h3>
+                    <h3 className="dotted dotted-ann">Recent Announcements</h3>
                     <div className="announcements">
                         <li>No Announcements Right Now!</li>
                     </div>
@@ -143,7 +143,7 @@ class App extends Component {
             <View>
                 <ViewBox>
                     <div className="welcome-header">
-                        <h2 className="dotted welcome-header-text">
+                        <h2 className="dotted dotted-title welcome-header-text">
                             Welcome to Discussion 119!
                         </h2>
                     </div>
@@ -156,12 +156,12 @@ class App extends Component {
                 {announcements}
                 <div className="extra container">
                     <ViewBox>
-                        <h3>Questions or Concerns? Just Wanna Chat?</h3>
+                        <h3 className="dotted dotted-question">Questions or Concerns? Just Wanna Chat?</h3>
                         <li><span className="emp">Email me:</span> dillon.yao@berkeley.edu</li>
                     </ViewBox>
                     <ViewBox>
                         <div className="about-me">
-                            <h3>About Me</h3>
+                            <h3 className="dotted dotted-about">About Me</h3>
                             <img className="prof-pic" alt="me" src={me}/>
                             <p>
                                 Hi there! My name is Dillon Yao and I'm the TA for this discussion and lab. I'm a

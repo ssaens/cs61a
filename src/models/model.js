@@ -3,6 +3,5 @@ import Week1 from './week1';
 import Test from './test';
 
 export default [
-    Test,
     Week0,
 ];
