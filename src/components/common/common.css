@@ -1,5 +1,5 @@
 .view .view-box {
-  padding: 0 10%;
+  padding: 0 150px;
   margin-bottom: 20px;
   z-index: 0;
 }
@@ -7,7 +7,17 @@
 .view .code-box {
   background-color: black;
   color: white;
-  padding: 40px 10%;
+  padding: 40px 150px;
   margin: 20px 0;
   wrap-option: pre;
+}
+
+@media only screen and (max-width: 800px) {
+  .view .view-box {
+    padding: 0 50px;
+  }
+
+  .view .code-box {
+    padding: 40px 50px;
+  }
 }

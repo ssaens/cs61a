@@ -48,14 +48,16 @@ class App extends Component {
                     style={contentStyle}
                 >
                     <header>
-                        <span
-                            className="menu-toggle"
-                            style={{color: isNavExpanded ? '#0797EA' : null}}
-                            onClick={() => this._toggleNav()}
-                        >
-                            <i className="fa fa-bars" aria-hidden="true"/>
-                        </span>
-                        <h1>CS <span className="course">61A</span> Discussion Resources</h1>
+                        <h1>
+                            <span
+                                className="menu-toggle"
+                                style={{color: isNavExpanded ? '#0797EA' : null}}
+                                onClick={() => this._toggleNav()}
+                            >
+                                <i className="fa fa-bars" aria-hidden="true"/>
+                            </span>
+                            CS <span className="course">61A</span> Discussion Resources
+                        </h1>
                     </header>
                     <div
                         className="view-container"
@@ -143,7 +145,7 @@ class App extends Component {
             <View>
                 <ViewBox>
                     <div className="welcome-header">
-                        <h2 className="dotted dotted-title welcome-header-text">
+                        <h2 className="welcome-header-text">
                             Welcome to Discussion 119!
                         </h2>
                     </div>
