@@ -1,8 +1,21 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
+
+  --color-header: #313B72;
+  --color-nav: #303036;
+  --color-text: #313B72;
+  --color-text-deep: #232328;
+  --color-emp: #0797EA;
+  --color-link: #449D21;
+  --color-link-deep: #74CD51;
+  --color-bg: #fafafa;
+
+  background-color: var(--color-bg);
+  height: 100%;
+}
+
+body {
   font-family: sans-serif;
-  background-color: rgb(20, 23, 27);
-  color: white;
   font-weight: 100;
 }

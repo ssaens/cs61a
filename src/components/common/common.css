@@ -1,0 +1,13 @@
+.view .view-box {
+  padding: 0 10%;
+  margin-bottom: 20px;
+  z-index: 0;
+}
+
+.view .code-box {
+  background-color: black;
+  color: white;
+  padding: 40px 10%;
+  margin: 20px 0;
+  wrap-option: pre;
+}

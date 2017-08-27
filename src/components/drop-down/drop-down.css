@@ -1,63 +1,36 @@
 .drop-down {
-    margin-bottom: 25px;
+  margin-bottom: 1.4em;
+}
+
+.drop-down__header h3 {
+  display: inline;
 }
 
 .drop-down__header {
-    border-bottom: 2px solid var(--color-orange);
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+  padding-bottom: 5px;
 }
 
-.drop-down__header h2 {
-    display: inline;
-    margin: 0;
-}
-
-.drop-down__header .number {
-    color: var(--color-blue);
+.drop-down__header .identifier {
+  color: var(--color-emp);
 }
 
 .drop-down__content {
-    height: 0px;
-    transition: height 0.5s ease;
-    overflow: hidden;
-    ;
+  overflow: hidden;
+  transform-origin: top;
+  transition: 0.5s ease;
+  margin-top: -20px;
 }
 
 .drop-down__toggle {
-    margin-left: 10px;
-    font-size: 1.2em;
-    display: inline-block;
-    transition: 0.5s ease-out;
+  display: inline-block;
+  transition: 0.5s ease;
+  margin-left: 10px;
 }
 
 .drop-down__toggle:hover {
-    cursor: pointer;
-    color: var(--color-blue);
+  cursor: pointer;
 }
 
-.drop-down__toggle.active {
-    transform: rotate(-180deg);
-    color: var(--color-blue);
-}
-
-.drop-down__content .cta {
-    text-decoration: none;
-    color: black;
-    display: inline-block;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    padding: 10px 40px;
-    border-radius: 20px;
-    transition: 0.2s ease-in-out;
-    background-color: white;
-}
-
-.drop-down__content .cta:visited {
-    color: black;
-}
-
-.drop-down__content .cta:hover {
-    background-color: var(--color-blue);
-    color: white;
+.drop-down__header {
+  border-bottom: 1px solid black;
 }

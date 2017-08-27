@@ -1,13 +1,19 @@
 import React, {Component} from 'react';
 
-class NavButton extends Component {
+import { NAV_WIDTH } from '../../common';
 
+import './navigation.css';
+
+class NavButton extends Component {
     render() {
+        const style = {
+            width: NAV_WIDTH,
+            backgroundColor: this.props.active ? 'black' : null,
+            borderRight: this.props.active ? '5px solid #0797EA' : null
+        };
+
         return (
-            <div className="navigation-button">
-                <span className="icon">
-                    {this.props.icon}
-                </span>
+            <div className="navigation-button" onClick={() => this._onClick()} style={style}>
                 <span className="label">
                     {this.props.label}
                 </span>
@@ -15,20 +21,28 @@ class NavButton extends Component {
         );
     }
 
+    _onClick() {
+        if (!this.props.active) {
+            this.props.notify(this.props.id);
+        }
+    }
 }
 
 class Navigation extends Component {
-
     render() {
-        const buttons = this._processItems();
+        const style = {
+            width: this.props.expanded ? NAV_WIDTH : 0,
+        };
+
+        const items = this._processItems();
 
         return (
-            <div className="navigation-container"
-                ref={($) => this.$ = $}>
+            <div
+                className="navigation-container"
+                style={style}
+            >
                 <nav>
-                    <ul>
-
-                    </ul>
+                    {items}
                 </nav>
             </div>
         );
@@ -36,13 +50,18 @@ class Navigation extends Component {
 
     _processItems() {
         const items = [];
+
         for (const item of this.props.items) {
             items.push(<NavButton
-                icon={item.icon}
+                key={item.id}
                 label={item.label}
-                view={item.view}
-            />)
+                id={item.id}
+                active={this.props.selected === item.id}
+                notify={(id) => { this.props.transition(id) }}
+            />);
         }
+        return items;
     }
-
 }
+
+export default Navigation;

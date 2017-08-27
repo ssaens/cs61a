@@ -1,62 +1,77 @@
 import React, {Component} from 'react';
+import {ViewBox} from '../common/common';
+
 import './drop-down.css';
 
 class DropDown extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+            fullHeight: 0,
+        }
+    }
 
     render() {
+        const {type, number, title} = this.props.header;
+        const ctas = this._processCtas();
+
+        const chevronStyle = {
+            transform: this.state.open ? 'rotate(-180deg)' : 'rotate(0deg)'
+        };
+
+        const contentStyle = {
+            maxHeight: this.state.open ? 2000 : 0,
+            paddingTop: this.state.open ? 20 : 0
+        };
+
         return (
             <div className="drop-down">
-                <div className="drop-down__header">
-                    <h2>
-                        Discussion {' '}
-                        <span className="number">{this.props.number}</span>: {' '}
-                        {this.props.title}
-                    </h2>
-                    <div className="drop-down__toggle"
-                         onClick={() => this._toggle()}
-                         ref={($) => this.toggleButton = $}
-                    >
-                        &#x25B2;
+                <ViewBox>
+                    <div className="drop-down__header">
+                        <h3><span className="identifier">{type} {number}:</span> {title}</h3>
+                        <span
+                            className="drop-down__toggle"
+                            style={chevronStyle}
+                            onClick={() => {this._toggle()}}
+                        >
+                            <i className="fa fa-chevron-down" aria-hidden="true"/>
+                        </span>
                     </div>
-                </div>
-                <div className="drop-down__content" ref={($) => this.contentElement = $}>
-                    <div className="ctas">
-                        {this._generateCtas()}
-                    </div>
-                    <div className="drop-down__custom">
-                        {this.props.custom}
-                    </div>
+                </ViewBox>
+                <div
+                    className="drop-down__content"
+                    style={contentStyle}
+                >
+                    <ViewBox>
+                        <div className="drop-down__ctas">
+                            {ctas}
+                        </div>
+                    </ViewBox>
+                    {this.props.children}
                 </div>
             </div>
         );
     }
 
-    componentDidMount() {
-        let contentHeight = 0;
-        for (const child of this.contentElement.childNodes) {
-            contentHeight += child.offsetHeight || 0;
-        }
-        this.contentHeight = `${contentHeight}px`
-    }
-
-    _toggle() {
-        this.toggleButton.classList.toggle('active');
-        if (!this.open) {
-            this.contentElement.style.height = this.contentHeight;
-        } else {
-            this.contentElement.style.height = 0;
-        }
-        this.open = !this.open;
-    }
-
-    _generateCtas() {
+    _processCtas() {
         const ctas = [];
         for (const cta of this.props.ctas) {
-            ctas.push(<a key={ctas.length} className="cta" href={cta.href} target="_blank">{cta.label}</a>);
+            ctas.push(
+                <li className="cta" key={ctas.length}>
+                    <a href={cta.href} target="_blank">
+                        {cta.icon ? <i className={`fa ${cta.icon}`}/> : null}
+                        {cta.label}
+                    </a>
+                </li>
+            );
         }
         return ctas;
     }
 
+    _toggle() {
+        this.setState({ open: !this.state.open });
+    }
 }
 
 export default DropDown;
