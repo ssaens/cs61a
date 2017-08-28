@@ -1,0 +1,168 @@
+#root {
+  height: 100%;
+}
+
+.app {
+  --nav-transition: 0.5s ease;
+
+  color: var(--color-text);
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--color-header);
+  position: relative;
+  font-weight: 200;
+}
+
+li, ann {
+  position: relative;
+  list-style: none;
+  margin-bottom: 2px;
+}
+
+li {
+  margin-left: 2em;
+}
+
+ann {
+  margin-left: 2em;
+  display: block;
+}
+
+.emp {
+  color: var(--color-emp);
+}
+
+.app .content {
+  transition: var(--nav-transition);
+}
+
+.app header {
+  background-color: var(--color-nav);
+  color: var(--color-bg);
+  min-height: 64px;
+}
+
+.menu-toggle {
+  margin-right: 15px;
+}
+
+.menu-toggle:hover {
+  cursor: pointer;
+  color: var(--color-emp);
+}
+
+.app header h1 {
+  color: var(--color-bg);
+  font-size: 1.6em;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.app .view-container {
+  overflow: auto;
+}
+
+.app footer {
+  margin-top: -64px;
+  height: 64px;
+  background-color: var(--color-nav);
+  z-index: 1000;
+}
+
+a {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  color: var(--color-link);
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+a:after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  border-width: 0 0 1px;
+  border-style: dotted;
+}
+
+a:hover {
+  color: var(--color-link-deep);
+}
+
+.welcome-header-text {
+  display: inline-block;
+}
+
+.prof-pic {
+  float: left;
+  margin-right: 1em;
+  display: inline-block;
+  width: 6.2em;
+  height: 6.2em;
+  border-radius: 50%;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.dotted:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #000;
+  margin-right: 10px;
+}
+
+ann:before {
+  content: "\f0da";
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #000;
+  margin-right: 8px;
+}
+
+.dotted-title:before {
+  content: "\f138";
+  position: absolute;
+  top: 1px;
+  left: -1.3em;
+}
+
+.dotted-ann:before {
+  content: "\f0a1";
+}
+
+.dotted-discussion:before {
+  content: "\f0e6";
+}
+
+.dotted-lab:before {
+  content: "\f0c3";
+}
+
+.dotted-question:before {
+  content: "\f059";
+}
+
+.dotted-about:before {
+  content: "\f05a";
+}
+
+.dotted-due:before {
+  content: "\f017";
+  margin-right: 0.4em;
+  color: inherit;
+}
+
+.dotted-event:before {
+  content: "\f133";
+  margin-right: 0.4em;
+  color: inherit;
+}

@@ -1,0 +1,29 @@
+.drop-down {
+  margin-bottom: 1em;
+}
+
+.drop-down__header h3 {
+  display: inline;
+}
+
+.drop-down__header .identifier {
+  color: var(--color-emp);
+}
+
+.drop-down__content {
+  overflow: hidden;
+  transform-origin: top;
+  transition: 0.5s ease;
+  margin-top: -20px;
+}
+
+.drop-down__toggle {
+  display: inline-block;
+  transition: 0.5s ease;
+  margin-left: 10px;
+  font-size: 1.1em;
+}
+
+.drop-down__toggle:hover {
+  cursor: pointer;
+}
