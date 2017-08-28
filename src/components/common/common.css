@@ -13,6 +13,7 @@
 }
 
 .dotted-due {
+  display: inline-block;
   background-color: var(--color-text);
   border-radius: 20px;
   color: var(--color-bg);
