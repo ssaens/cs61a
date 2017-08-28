@@ -160,6 +160,13 @@ class App extends Component {
                     <ViewBox>
                         <h3 className="dotted dotted-question">Questions or Concerns? Just Wanna Chat?</h3>
                         <li><span className="emp">Email me:</span> dillon.yao@berkeley.edu</li>
+                        <li><span className="emp">Anonymous Comments: </span>
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSefLHPkWe7mj9fYBYmNCngw2SF0strGpkUAOJ8uftzTCidxkA/viewform?usp=sf_link"
+                                target="_blank">
+                                Google Form
+                            </a>
+                        </li>
                     </ViewBox>
                     <ViewBox>
                         <div className="about-me">
