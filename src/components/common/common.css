@@ -12,6 +12,19 @@
   wrap-option: pre;
 }
 
+.dotted-due {
+  background-color: var(--color-text);
+  border-radius: 20px;
+  color: var(--color-bg);
+  font-size: 0.8em;
+  padding: 1px 0.6em;
+  margin-left: 0.5em;
+}
+
+.dotted-event {
+
+}
+
 @media only screen and (max-width: 800px) {
   .view .view-box {
     padding: 0 50px;

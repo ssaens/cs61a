@@ -154,3 +154,15 @@ ann:before {
 .dotted-about:before {
   content: "\f05a";
 }
+
+.dotted-due:before {
+  content: "\f017";
+  margin-right: 0.4em;
+  color: inherit;
+}
+
+.dotted-event:before {
+  content: "\f133";
+  margin-right: 0.4em;
+  color: inherit;
+}

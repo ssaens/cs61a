@@ -18,7 +18,7 @@ class View extends Component {
 
 function viewFromTemplate(model) {
     const {title, announcements, dropdowns} = model;
-    const dropDownElements = dropdowns.map((dropdown) => {
+    const dropDownElements = dropdowns.filter((d) => !d.hide).map((dropdown) => {
         return (
             <DropDown
                 key={nextId++}

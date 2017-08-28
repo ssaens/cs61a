@@ -4,4 +4,5 @@ import Test from './test';
 
 export default [
     Week0,
+    Week1
 ];
