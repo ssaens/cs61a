@@ -4,7 +4,6 @@ import {ViewBox, CodeBox, homework, lab} from '../components/common/common';
 const LINKS = {
     LAB0: 'https://cs61a.org/lab/lab00/',
     LAB1: 'https://cs61a.org/lab/lab01/',
-    HW0: 'https://cs61a.org/hw/hw00/',
     HW1: 'https://cs61a.org/hw/hw01/'
 };
 
@@ -15,7 +14,6 @@ export default {
         announcements: [
             lab(0, LINKS.LAB0, 9, 1),
             // lab(1, LINKS.LAB1, 9, 1),
-            homework(0, LINKS.HW0, 8, 31),
             homework(1, LINKS.HW1, 8, 31),
         ],
         dropdowns: [

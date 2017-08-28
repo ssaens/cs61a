@@ -36,7 +36,7 @@ function eventDate(month, day) {
 function homework(number, link, m, d) {
     return (
         <ann>
-            <a href={link}>Homework {number}</a> has been released
+            <a href={link} target="_blank">Homework {number}</a> has been released
             {dueDate(m, d)}
         </ann>
     );
@@ -45,7 +45,7 @@ function homework(number, link, m, d) {
 function lab(number, link, m, d) {
     return (
         <ann>
-            <a href={link}>Lab {number}</a> has been released
+            <a href={link} target="_blank">Lab {number}</a> has been released
             {dueDate(m, d)}
         </ann>
     );
@@ -54,7 +54,7 @@ function lab(number, link, m, d) {
 function project(number, name, link, m, d) {
     return (
         <ann>
-            <a href={link}>Project {number}: {name}</a> has been released
+            <a href={link} target="_blank">Project {number}: {name}</a> has been released
             {dueDate(m, d)}
         </ann>
     );
