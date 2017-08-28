@@ -25,12 +25,12 @@ const days = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
 
 function dueDate(month, day) {
     const date = new Date(2017, month - 1, day);
-    return <span className="dotted dotted-due">{`${days[date.getDay()]} ${month} / ${day}`}</span>;
+    return <span className="dotted dotted-due">{`${days[date.getDay()]} ${month}∕${day}`}</span>;
 }
 
 function eventDate(month, day) {
     const date = new Date(2017, month - 1, day);
-    return <span className="dotted dotted-event">{`${days[date.getDay()]} ${month} / ${day}`}</span>;
+    return <span className="dotted dotted-event">{`${days[date.getDay()]} ${month}∕${day}`}</span>;
 }
 
 function homework(number, link, m, d) {
