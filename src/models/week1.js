@@ -7,7 +7,8 @@ const LINKS = {
     HW1: 'https://cs61a.org/hw/hw01/',
     DIS1: 'https://cs61a.org/disc/disc01.pdf',
     TERM_GUIDE: 'https://www.davidbaumgold.com/tutorials/command-line/',
-    HOG: ''
+    LAB1_SLIDES: 'https://docs.google.com/presentation/d/1GJLAPjldqWkT-qvCbmUxNRGGwIIxaVSuccVgLpCLeKc/edit?usp=sharing',
+    HOG: 'https://cs61a.org/proj/hog/'
 };
 
 export default {
@@ -55,6 +56,10 @@ export default {
                         label: 'Instructions',
                         href: LINKS.LAB1
                     },
+                    {
+                        label: 'Slides',
+                        href: LINKS.LAB1_SLIDES
+                    }
                 ],
                 content: (
                     <div className="container">
