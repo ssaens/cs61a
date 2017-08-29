@@ -1,12 +1,13 @@
 import React from 'react';
-import {ViewBox, CodeBox, homework, lab, colored, eventDate} from '../components/common/common';
+import {ViewBox, CodeBox, homework, lab, colored, project, eventDate} from '../components/common/common';
 
 const LINKS = {
     LAB0: 'https://cs61a.org/lab/lab00/',
     LAB1: 'https://cs61a.org/lab/lab01/',
     HW1: 'https://cs61a.org/hw/hw01/',
     DIS1: 'https://cs61a.org/disc/disc01.pdf',
-    TERM_GUIDE: 'https://www.davidbaumgold.com/tutorials/command-line/'
+    TERM_GUIDE: 'https://www.davidbaumgold.com/tutorials/command-line/',
+    HOG: ''
 };
 
 export default {
@@ -17,8 +18,7 @@ export default {
             lab(0, LINKS.LAB0, 9, 1),
             lab(1, LINKS.LAB1, 9, 1),
             homework(1, LINKS.HW1, 8, 31),
-            <ann>Homework 1 Party, 6:30 - 8:00 in 521 Cory! {eventDate(8, 28)}</ann>,
-            <ann>Keep an Eye Out for Project 1: Hog!</ann> //TODO: Update on Release
+            project(1, 'Hog', LINKS.HOG, 9, 7)
         ],
         dropdowns: [
             {
@@ -75,7 +75,7 @@ export default {
                                 besides <code>True</code> and <code>False</code>.
                             </p>
                             <p>
-                                <code>0</code>, <code>None</code>, <code>[]</code>, <code>()</code>, <code>{}</code>, and <code>''</code> are false-y values.
+                                <code>0</code>, <code>None</code>, <code>[]</code>, <code>()</code>, <code>{'{}'}</code>, and <code>''</code> are false-y values.
                                 They act like <code>False</code> in conditionals.
                                 All other values in Python are truth-y and act like <code>True</code> in conditionals.
                             </p>
