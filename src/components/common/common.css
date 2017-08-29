@@ -5,16 +5,18 @@
 }
 
 .view .code-box {
-  background-color: black;
+  background-color: #202026;
   color: white;
   padding: 40px 150px;
   margin: 20px 0;
-  wrap-option: pre;
+  white-space: pre;
+  font-family: monospace;
+  overflow-x: auto;
 }
 
 .dotted-due {
   display: inline-block;
-  background-color: var(--color-text);
+  background-color: var(--color-header);
   border-radius: 20px;
   color: var(--color-bg);
   font-size: 0.8em;
@@ -24,7 +26,14 @@
 }
 
 .dotted-event {
-
+  display: inline-block;
+  background-color: var(--color-header);
+  border-radius: 20px;
+  color: var(--color-bg);
+  font-size: 0.8em;
+  font-weight: 500;
+  padding: 1px 0.6em;
+  margin-left: 0.5em;
 }
 
 @media only screen and (max-width: 800px) {

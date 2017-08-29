@@ -60,11 +60,17 @@ function project(number, name, link, m, d) {
     );
 }
 
+function colored(color, content) {
+   return  <span style={{color}}>{content}</span>;
+}
+
 export {
     ViewBox,
     CodeBox,
     dueDate,
+    eventDate,
     homework,
     lab,
     project,
+    colored,
 }
