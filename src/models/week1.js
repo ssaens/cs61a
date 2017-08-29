@@ -106,6 +106,7 @@ export default {
                             <h4>4. <tele>while</tele> Statements</h4>
                             <p><code>while</code> statements allow repetition of a block until a conditional is <code>False</code>.
                             The conditional is evaluated before the block is executed on each iteration.</p>
+                            on some actual code.
                         </ViewBox>
                         <CodeBox>
                             {colored('orange', 'while')} {colored('lightblue', '<conditional>')}:<br/>
