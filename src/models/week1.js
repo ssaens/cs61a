@@ -5,7 +5,8 @@ const LINKS = {
     LAB0: 'https://cs61a.org/lab/lab00/',
     LAB1: 'https://cs61a.org/lab/lab01/',
     HW1: 'https://cs61a.org/hw/hw01/',
-    DIS1: 'https://cs61a.org/disc/disc01.pdf',
+    DISC1: 'https://cs61a.org/disc/disc01.pdf',
+    DISC1_SLIDES: 'https://docs.google.com/presentation/d/1R2CWHhPIcOHPXAytLA8LuBmAIQQDUriRBgz9nTthEkg/edit?usp=sharing',
     TERM_GUIDE: 'https://www.davidbaumgold.com/tutorials/command-line/',
     LAB1_SLIDES: 'https://docs.google.com/presentation/d/1GJLAPjldqWkT-qvCbmUxNRGGwIIxaVSuccVgLpCLeKc/edit?usp=sharing',
     HOG: 'https://cs61a.org/proj/hog/'
@@ -19,6 +20,7 @@ export default {
             lab(0, LINKS.LAB0, 9, 1),
             lab(1, LINKS.LAB1, 9, 1),
             homework(1, LINKS.HW1, 8, 31),
+            // homework(2, LINKS.HW2, 9, 5),
             project(1, 'Hog', LINKS.HOG, 9, 7)
         ],
         dropdowns: [
@@ -121,56 +123,59 @@ export default {
                 )
             },
             {
-                hide: true,
                 header: {
                     type: 'Discussion',
                     number: 1,
-                    title: 'Expressions, Statements, and Functions'
+                    title: 'Control and Environments'
                 },
                 ctas: [
                     {
-                        label: 'Worksheet',
-                        href: ''
+                        label: "Slides",
+                        href: LINKS.DISC1_SLIDES
                     },
+                    {
+                        label: 'Worksheet',
+                        href: LINKS.DISC1
+                    }
                 ],
-                content: (
-                    <div className="container">
-                        <ViewBox>
-                            <p>
-                                This discussion goes over many of the most fundamental concepts of computation in any
-                                programming language. The concepts touched over here will help you understand how
-                                the Python interpreter (and the computer in general) sees and executes code. Really
-                                try and have a solid understanding of these concepts as they will persist through the
-                                entire course.
-                            </p>
-                            <h3>Main Ideas</h3>
-                            <h4>How to Evaluate Function Calls</h4>
-                            <p>
-                                Evaluation of functions calls is a very very mechanical process in python, and it's rules
-                                are relatively simple. Let's take a look at an example:
-                            </p>
+                // content: (
+                //     <div className="container">
+                //         <ViewBox>
+                //             <p>
+                //                 This discussion goes over many of the most fundamental concepts of computation in any
+                //                 programming language. The concepts touched over here will help you understand how
+                //                 the Python interpreter (and the computer in general) sees and executes code. Really
+                //                 try and have a solid understanding of these concepts as they will persist through the
+                //                 entire course.
+                //             </p>
+                //             <h3>Main Ideas</h3>
+                //             <h4>How to Evaluate Function Calls</h4>
+                //             <p>
+                //                 Evaluation of functions calls is a very very mechanical process in python, and it's rules
+                //                 are relatively simple. Let's take a look at an example:
+                //             </p>
 
-                            <h4>Environment Diagrams</h4>
-                            <p>
-                                Environment diagrams show the memory structure of our program as it's running. They provide
-                                insights into why our code does certain things or how the interpretor figures out which variables
-                                to read or wrtie to. Again, the rules involved in creating one are very mechanical, but if
-                                followed carefully, will greatly aid your understanding of the language and other concepts in
-                                the course.
-                            </p>
+                //             <h4>Environment Diagrams</h4>
+                //             <p>
+                //                 Environment diagrams show the memory structure of our program as it's running. They provide
+                //                 insights into why our code does certain things or how the interpretor figures out which variables
+                //                 to read or wrtie to. Again, the rules involved in creating one are very mechanical, but if
+                //                 followed carefully, will greatly aid your understanding of the language and other concepts in
+                //                 the course.
+                //             </p>
 
-                            <h4>Higher Order Functions (HOF)</h4>
-                            <p>Remember, function names are variables like anything other! They may be returned or assigned
-                            as desired.</p>
+                //             <h4>Higher Order Functions (HOF)</h4>
+                //             <p>Remember, function names are variables like anything other! They may be returned or assigned
+                //             as desired.</p>
 
-                            <p>
-                                It is necessary to remember when working with both Environment Diagrams and Functions
-                                the difference between a variable and the object it represents, but this will be covered in
-                                greater detail later in the course.
-                            </p>
-                        </ViewBox>
-                    </div>
-                )
+                //             <p>
+                //                 It is necessary to remember when working with both Environment Diagrams and Functions
+                //                 the difference between a variable and the object it represents, but this will be covered in
+                //                 greater detail later in the course.
+                //             </p>
+                //         </ViewBox>
+                //     </div>
+                // )
             }
         ]
     }
